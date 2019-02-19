@@ -1,0 +1,37 @@
+﻿@model Akcija.Models.Korisnik
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div>
+                <form method="post" action="">
+                    <p>
+                        @Html.LabelFor(model => model.email, new { @class = "control-label" })
+                        @ViewBag.email
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </p>
+                    <p>
+                        @Html.LabelFor(model => model.lozinka, new { @class = "control-label" })
+                        @Html.PasswordFor(model => model.lozinka, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lozinka, "", new { @class = "text-danger" })
+                    </p>
+                    <button class="btn btn-primary">Prijava</button>
+                </form>
+            </div>
+        </div>
+
+}
+    </div>
+</div>  
+
+
