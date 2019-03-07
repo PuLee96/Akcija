@@ -99,8 +99,6 @@ D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\roslyn\System.Collections.
 D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\MySql.Data.EntityFramework.dll
 D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\MySql.Data.EntityFramework.xml
 D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\obj\Debug\Akcija.csprojResolveAssemblyReference.cache
-D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\MySql.Data.Entity.EF6.dll
-D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\MySql.Data.Entity.EF6.xml
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\bin\ApplicationInsights.config
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\bin\Akcija.dll.config
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\bin\Akcija.dll

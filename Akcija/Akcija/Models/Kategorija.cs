@@ -14,16 +14,14 @@ namespace Akcija.Models
         {
             [Required]
             [Key]
-	        [Column(Order = 1)]
             public int id_kategorija { get; set; }
 
 	        [Display(Name = "Naziv kategorije")]
-            public string Naziv { get; set; }
+            public string naziv { get; set; }
 	
             [Required]
-            [ForeignKey("Poduzece")]
             public int id_poduzece { get; set; }
-            public Poduzece poduzece{ get; set; }
+            public string poduzece{ get; set; }
 
 
 

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Akcija.Models.Kategorija>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutKorisnik.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_poduzece)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poduzece)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_poduzece)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poduzece)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_kategorija }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_kategorija }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_kategorija })
+        </td>
+    </tr>
+}
+
+</table>
