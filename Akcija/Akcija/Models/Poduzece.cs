@@ -4,34 +4,43 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace Akcija.Models
 {
     [Table("poduzece")]
     public class Poduzece
     {
-        [Required]
         [Key]
+        [Required]
+        [DisplayName("ID poduzeæa")]
         public int id_poduzece { get; set; }
 
-        [Display(Name = "Naziv")]
-        public string naziv { get; set; }
+        [DataType(DataType.Text)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("Naziv poduzeæa")]
+        public string naziv_poduzece { get; set; }
 
-        [Display(Name = "Adresa")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("Adresa")]
         public string adresa { get; set; }
 
-        [Display(Name = "Grad")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("Grad")]
         public string grad { get; set; }
 
-        [Display(Name = "Telefon")]
-        public string tel { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("Broj telefona")]
+        public string telefon { get; set; }
 
-        [DataType(DataType.EmailAddress, ErrorMessage = "Upisali ste nevaljanu e-mail adresu")]
-        [Display(Name = "Email adresa")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("E-mail adresa")]
+        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
-        [Display(Name = "Web adresa")]
-        public string webadresa { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        [DisplayName("Web adresa")]
+        public string web_adresa { get; set; }
 
     }
 }

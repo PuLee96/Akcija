@@ -4,40 +4,58 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace Akcija.Models
 {
     [Table("oglas")]
     public class Oglas
     {
-        [Required]
-        [Key]
         public int id_poduzece { get; set; }
 
-        [Display(Name = "Naziv artikla")]
-        public string naziv { get; set; }
+        [Key]
+        [DisplayName("ID oglasa")]
+        public int id_oglas { get; set; }
 
-	    [Display(Name = "Osnovna cijena artikla")]
-        public float OsnovnaCijena { get; set; }
+        [DisplayName("ID akcije")]
+        public int id_akcija { get; set; }
 
-	    [Display(Name = "Mjerna jedinica (komad, kg,...")]
-        public string mjernaJedinica { get; set; }
+        [DisplayName("ID artikla")]
+        public int id_artikl { get; set; }
 
-        [Display(Name = "Postotak popusta")]
-        public int postotak { get; set; }
+        [DisplayName("Osnovna cijena")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        [DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = true)]
+        public float osnovna_cijena { get; set; }
 
-        [Display(Name = "Akcijska cijena artikla")]
-        public float AkcijskaCijena { get; set; }
+        [DisplayName("Mjerna jedinica")]
+        [DataType(DataType.Text)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public string mjerna_jedinica { get; set; }
 
-        [Display(Name = "Kratki Opis")]
-        public string KratkiOpis{ get; set; }
+        [DisplayName("Postotka popusta")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public int postotak_popusta { get; set; }
 
-        [Display(Name = "Dugi Opis")]
-        public string DugoOpis{ get; set; }
+        [DisplayName("Akcijska cijena")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        [DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = true)]
+        public float akcijska_cijena { get; set; }
 
-        [Display(Name = "Slika proizvoda")]
-        public string slika { get; set; }
+        [DisplayName("Kratki opis")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public string kratki_opis { get; set; }
 
-        
+        [DisplayName("Dugi opis")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public string dugi_opis { get; set; }
+
+        [DisplayName("Slika proizvoda")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public string slika_proizvoda { get; set; }
+
+        [DisplayName("ID kategorije")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak.")]
+        public int id_kategorija { get; set; }
     }
 }

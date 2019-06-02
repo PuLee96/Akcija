@@ -4,36 +4,39 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace Akcija.Models
 {
     [Table("korisnik")]
     public class Korisnik
     {
-        [Required]
         [Key]
+        [DisplayName("ID korisnika")]
         public int id_korisnik { get; set; }
 
-
-        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
-        [Display(Name = "Ime i Prezime")]
-        public string ime_prezime { get; set; }
-
-	    [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
-        [Display(Name = "ID poduzeæe")]
+        [DisplayName("ID poduzeæa")]
         public int id_poduzece { get; set; }
 
+        [DisplayName("Ime korisnika")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Upisali ste nevaljanu e-mail adresu")]
-        [Display(Name = "Email adresa")]
+        public string ime { get; set; }
+
+        [DisplayName("Prezime korisnika")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        public string prezime { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        [DisplayName("E-mail adresa")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
         public string email { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
-        [Display(Name = "Lozinka")]
         [DataType(DataType.Password)]
+        [DisplayName("Lozinka")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
         public string lozinka { get; set; }
 
 
-        
+
     }
 }

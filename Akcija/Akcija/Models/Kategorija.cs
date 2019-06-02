@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.ComponentModel;
 
 namespace Akcija.Models
 
@@ -12,19 +12,16 @@ namespace Akcija.Models
         [Table("kategorija")]
         public class Kategorija
         {
-            [Required]
-            [Key]
-            public int id_kategorija { get; set; }
+        [Key]
+        [Required]
+        [DisplayName("ID kategorije")]
+        public int id_kategorija { get; set; }
 
-	        [Display(Name = "Naziv kategorije")]
-            public string naziv { get; set; }
-	
-            [Required]
-            public int id_poduzece { get; set; }
-            public string poduzece{ get; set; }
+        [DisplayName("Naziv kategorije")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0} je obavezan podatak")]
+        public string naziv_kategorije { get; set; }
 
 
 
-            
-        }
+    }
     }
