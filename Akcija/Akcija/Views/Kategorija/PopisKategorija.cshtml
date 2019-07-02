@@ -1,0 +1,53 @@
+﻿@using Akcija.Models
+@using System.Web.Mvc;
+@model List<Kategorija>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (@Html.BeginForm("PopisKategorija", "Kategorija", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+       
+        @Html.Label("Naziv", new { @class = "sr-only" })
+
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>Naziv kategorije</th>
+    </tr>
+    @foreach (Kategorija k in Model)
+    {
+        <tr>
+            <td>@k.naziv_kategorije</td>
+
+            <td>
+                <a onclick="pokaziModalKat('@Url.Action("UrediKategoriju", "Kategorija", new { id = k.id_kategorija })')" class="btn btn-primary btn-sm">Uredi</a>
+                <a onclick="pokaziModalKat('@Url.Action("ObrisiKategoriju", "Kategorija", new { id = k.id_kategorija })')" class="btn btn-danger btn-sm">Obriši</a>
+            </td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("Dodavanje nove kategorije", "DodavanjeKategorija", "Kategorija")</p>
+<p>@Html.ActionLink("Povratak", "PocetnaStranica", "Pocetna")</p>
+
+
+<div class="modal fade" id="modal_kategorija" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-backdrop="static">
+    <div id="modalCon">
+    </div>
+</div>
+<script>
+    function pokaziModalKat(path) {
+        $.ajax({
+            url: path,
+            success: function (data) {
+                $("#modalCon").html(data);
+                $('#modal_kategorija').modal('show');
+            }
+        });
+    }
+</script>

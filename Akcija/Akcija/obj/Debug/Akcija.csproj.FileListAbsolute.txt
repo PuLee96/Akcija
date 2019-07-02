@@ -200,3 +200,5 @@ D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\obj\Debug\Akcija.csproj.CoreC
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\obj\Debug\Akcija.csproj.CopyComplete
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\obj\Debug\Akcija.dll
 D:\Desktop\FAKS\PAUP Projekt\Akcija1\Akcija\Akcija\obj\Debug\Akcija.pdb
+D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\itextsharp.dll
+D:\Desktop\FAKS\PAUP Projekt\Akcija\Akcija\Akcija\bin\itextsharp.xml

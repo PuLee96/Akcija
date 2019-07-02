@@ -18,7 +18,7 @@ namespace Akcija.Controllers
         {
 
 
-            Sesija.Tren.KorisnikId = 0;
+            Provjera.Tren.KorisnikId = 0;
             Korisnik kor = new Korisnik();
 
             return View(kor);
@@ -33,7 +33,7 @@ namespace Akcija.Controllers
 
             if (korisnik != null)
             {
-                Sesija.Tren.KorisnikId = korisnik.id_korisnik;
+                Provjera.Tren.KorisnikId = korisnik.id_korisnik;
                 return RedirectToAction("Index", "Home");
             }
 
@@ -48,12 +48,12 @@ namespace Akcija.Controllers
         }
 
 
-        public ActionResult Odjava1()
+        public ActionResult Odjava()
         {
 
-            Sesija.Odjava();
+            Provjera.Odjava();
             FormsAuthentication.SignOut();
-            return RedirectToAction("Prijava", "Prijava");
+            return RedirectToAction("Prijava", "Login");
 
         }
     }
