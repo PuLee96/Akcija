@@ -15,12 +15,7 @@
 
     @Html.AntiForgeryToken()
 
-    <div class="container" align="center" style="color:darkslateblue">
-        <h2>AKCIJSKA PRODAJA</h2>
-        <p>  </p>
-    </div>
-
-
+<div class="container-fluid" align="center" style="color:deepskyblue; padding-top:2em;">
     <div class="form-signin" align="center">
         <p></p>
         <p></p>
@@ -35,17 +30,13 @@
         <p class="text-primary">Upišite lozinku:</p>
         @Html.PasswordFor(model => model.lozinka, new { @class = "form-control", placeholder = "Lozinka" })
         @Html.ValidationMessageFor(model => model.lozinka, "", new { @class = "text-danger" })
-
     </div>
-
     <p></p>
     <p></p>
-
     <p style="text-align:center"><input type="submit" value="Prijavi se" class="btn btn-info" /></p>
     <p> </p>
-
     <p style="text-align:center">Molimo prijavite se za nastavak.</p>
-
+    </div>
 }
 
 @section Scripts {
