@@ -8,16 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
+
     <nav class="navbar navbar-expand-lg navbar-white bg-dark">
-        <a class="navbar-brand" href="#">Akcijska prodaja</a>
+        <a class="navbar-brand" href="~/Home/Index">Akcijska prodaja</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div align="left" class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="~/Pocetna/PocetnaStranica">Početna <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="~/Home/Index">Početna <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="~/Artikl/PopisArtikala">Artikli <span class="sr-only">(current)</span></a>
@@ -43,7 +43,6 @@
             <a href="~/Login/Odjava" class="btn btn-light btn-md btn-grad">Odjavi se</a>
         </div>
     </nav>
-    
 
     <div class="container body-content">
         @RenderBody()
@@ -58,6 +57,15 @@
     @Scripts.Render("~/bundles/bootstrap")
     
     @RenderSection("scripts", required: false)
-    
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk"></script>
+        
+        
+    </environment>
+
 </body>
 </html>
