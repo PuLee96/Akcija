@@ -24,7 +24,7 @@ namespace Akcija
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootswatch/lumen/bootstrap.css",
+                      "~/Content/bootswatch/journal/bootstrap.css",
                       "~/Content/Site.css"
                       ));
         }
