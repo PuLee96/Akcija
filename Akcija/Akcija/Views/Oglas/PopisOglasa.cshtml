@@ -1,0 +1,68 @@
+﻿@using Akcija.Models
+@using System.Web.Mvc;
+@model List<Oglas_Kategorija>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (@Html.BeginForm("Popis", "Oglas", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        @Html.Label("Naziv", new { @class = "sr-only" })
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>Naziv artikla</th>
+        <th>Osnovna cijena</th>
+        <th>Mjerna jedinica</th>
+        <th>Postotak popusta</th>
+        <th>Akcijska cijena</th>
+        <th>Kratki opis</th>
+        <th>Dugi opis</th>
+        <th>Kategorija</th>
+        <th>Slike</th>
+        <th>Akcije</th>
+
+    </tr>
+    @foreach (Oglas_Kategorija o in Model)
+    {
+        <tr>
+            <td>@o.artikl</td>
+            <td>@o.oglas.osnovna_cijena</td>
+            <td>@o.oglas.mjerna_jedinica</td>
+            <td>@o.oglas.postotak_popusta</td>
+            <td>@o.oglas.akcijska_cijena</td>
+            <td>@o.oglas.kratki_opis</td>
+            <td>@o.oglas.dugi_opis</td>
+            <td>@o.kategorija</td>
+            <td><img src="~/Images/" width="100" height="100" /></td>
+            <td>
+                <a onclick="pokaziModal('@Url.Action("Obrisi", "Oglas", new { id = o.oglas.id_oglas })')" class="btn btn-danger btn-sm">Obriši</a>
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Dodaj novi oglas", "DodavanjeOglasa")
+
+<p>@Html.ActionLink("Povratak", "Index", "Home")</p>
+
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-backdrop="static">
+    <div id="modalContainer">
+    </div>
+</div>
+<script>
+    function pokaziModal(path) {
+        $.ajax({
+            url: path,
+            success: function (data) {
+                $("#modalContainer").html(data);
+                $('#modal').modal('show');
+            }
+        });
+    }
+</script>
